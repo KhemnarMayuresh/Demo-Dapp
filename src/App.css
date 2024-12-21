@@ -1,0 +1,109 @@
+/* General App styles */
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Header bar styling */
+.header-bar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #2c3e50;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Connect Wallet button style */
+.connect-wallet {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.connect-wallet:hover {
+  background-color: #45a049;
+}
+
+/* Wallet information display */
+.wallet-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.wallet-address,
+.wallet-balance {
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Disconnect button style */
+.disconnect-btn {
+  background-color: #e74c3c;
+  border: none;
+  border-radius: 50%;
+  padding: 5px 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.disconnect-btn:hover {
+  background-color: #c0392b;
+}
+
+.disconnect-icon {
+  color: white;
+  font-size: 16px;
+}
+
+.content {
+  margin-top: 70px;
+}
+
+/* Main content and positioning */
+.main-content {
+  margin-top: 70px; /* Adjusted to avoid overlap with the header */
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 32px;
+  color: #333;
+}
+
+/* New Balance info section */
+.balance-info {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.erc20-balance {
+  background-color: #34495e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
