@@ -124,6 +124,7 @@ This project is a simple decentralized application (dApp) showcasing Web3 capabi
 1. Token balances may not update immediately after a transaction.
 2. OpenSea metadata refresh may take a few minutes.
 3. Ensure the wallet holds enough testnet ETH for minting and transactions.
+4. Because of time contraints, I am not able to add more error handling regarding errors of why minting transaction is failed.
 
 ---
 
@@ -133,7 +134,8 @@ This project is a simple decentralized application (dApp) showcasing Web3 capabi
 - Used previously created personal modules for connecting wallet and smart contract integration
 - [simple Smart Contracts](https://docs.openzeppelin.com/contracts/5.x/wizard)
 - [Hardhat Documentation](https://hardhat.org/hardhat-runner/docs/getting-started#quick-start)
-
+- [Etherscan API](https://etherscan.io/myapikey)
+- [Pinata to store the metadata for NFT's](https://app.pinata.cloud/ipfs/files)
 ---
 
 ## License

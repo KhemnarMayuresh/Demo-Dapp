@@ -2,7 +2,7 @@ import React from "react";
 import { useWallet } from "../context/WalletContext";
 
 const WalletStatus = () => {
-  const { walletAddress, balance, loading, connectWallet, disconnectWallet } = useWallet();
+  const { walletAddress, balance, connectWallet, disconnectWallet } = useWallet();
 
   return (
     <div>

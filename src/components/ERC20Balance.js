@@ -4,7 +4,7 @@ import { ethers } from "ethers";
 import ERC20Token from "../abi/ERC20Token.json";
 
 const ERC20Balance = () => {
-    const { walletAddress, connectWallet, disconnectWallet } = useWallet();
+    const { walletAddress } = useWallet();
     const [firstTokenData, setFirstTokenData] = useState({ name: "", symbol: "", balance: "0" });
     const [secondTokenData, setSecondTokenData] = useState({ name: "", symbol: "", balance: "0" });
     const [loading, setLoading] = useState(false);

@@ -5,8 +5,7 @@ import { ethers } from "ethers";
 import MyNFT from "../abi/MyNFT.json";
 
 const MintNFT = () => {
-    const { walletAddress, connectWallet, disconnectWallet } = useWallet();
-    const [mintedTokenId, setMintedTokenId] = useState(null);
+    const { walletAddress } = useWallet();
     const [nftMetadata, setNftMetadata] = useState([]);
     const [totalSupply, setTotalSupply] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -107,8 +106,18 @@ const MintNFT = () => {
             // Fetch the token's metadata
             loadNFTData();
         } catch (error) {
-            console.error("Error minting NFT:", error);
-            setError("Failed to mint NFT.");
+            console.error("Error minting NFT:", error); 
+            // Check if the error has a message (for example, a revert reason)
+            if (error.data && error.data.message) {
+                // This is typically the revert reason if the transaction fails
+                setError(`Minting failed: ${error.data.message}`);
+            } else if (error.message) {
+                // General error message, could be network or provider issues
+                setError(`Failed to mint NFT: ${error.message}`);
+            } else {
+                // Catch-all for unknown error structure
+                setError("An unknown error occurred while minting the NFT.");
+            }
         } finally {
             setLoading(false);
         }
@@ -122,7 +131,7 @@ const MintNFT = () => {
                 <button className={`mint-button ${loading ? 'loading' : ''}`} onClick={mintNFT} disabled={loading}>
                     {loading ? "Minting..." : "Mint NFT"}
                 </button>
-                <h4 style={{ textColor: "red" }}>{error}</h4>
+                <h4 style={{ color: "red" }}>{error}</h4>
 
                 <NFTCards nftMetadata={nftMetadata} nftContractAddress={nftContractAddress} />
             </> :
