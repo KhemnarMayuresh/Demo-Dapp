@@ -78,6 +78,21 @@
   margin-top: 70px;
 }
 
+.refresh-button {
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #0077b5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+
 /* Main content and positioning */
 .main-content {
   margin-top: 70px; /* Adjusted to avoid overlap with the header */
@@ -98,7 +113,7 @@ h1 {
 }
 
 .erc20-balance {
-  background-color: #34495e;
+  background-color: #9da1a6;
   color: white;
   padding: 10px 20px;
   border-radius: 5px;
@@ -106,4 +121,82 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Container for all NFT cards */
+.Minted-NFt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* Individual NFT card */
+.nft-card {
+  width: 250px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.nft-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Image section */
+.nft-card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+}
+
+/* Details section */
+.nft-card .nft-details {
+  padding: 15px;
+}
+
+.nft-card .nft-details h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.nft-card .nft-details p {
+  font-size: 14px;
+  color: #777;
+  margin: 10px 0;
+}
+
+/* Attributes section */
+.nft-card .attributes {
+  text-align: left;
+  margin: 10px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.nft-card .attributes div {
+  margin: 5px 0;
+}
+
+/* OpenSea link */
+.nft-card .opensea-link {
+  font-size: 14px;
+  color: #0077b5;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+  transition: color 0.2s ease-in-out;
+}
+
+.nft-card .opensea-link:hover {
+  color: #005f88;
 }

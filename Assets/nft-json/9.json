@@ -1,0 +1,23 @@
+{
+  "name": "Mystic Person 2",
+  "description": "A legendary Person with mystical powers",
+  "image": "ipfs://bafkreid7tgigh7nadebnlclfmwmymezef4wt4yrezordcf5irfqecwyh6a", 
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Damage",
+      "value": 145
+    },
+    {
+      "trait_type": "Element",
+      "value": "Fire"
+    },
+    {
+      "trait_type": "Level",
+      "value": 4
+    }
+  ]
+}
