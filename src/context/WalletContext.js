@@ -33,7 +33,8 @@ export const WalletProvider = ({ children }) => {
       // Get the balance of the connected wallet (in Ether)
       const balanceInWei = await provider.getBalance(address);
       const balanceInEth = ethers.formatEther(balanceInWei);
-      setBalance(balanceInEth);
+      const bal = parseFloat(balanceInEth.toString());
+      setBalance(bal?.toFixed(4));
     } catch (error) {
       console.error("Error connecting to wallet:", error);
     } finally {

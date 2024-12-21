@@ -115,11 +115,11 @@ const MintNFT = () => {
     };
 
     return (
-        <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <div className="nft-container">
             {walletAddress ? <>
                 <h1>Mint Your NFT</h1>
                 <h3> Total NFT Minted ({totalSupply})</h3>
-                <button onClick={mintNFT} disabled={loading}>
+                <button className={`mint-button ${loading ? 'loading' : ''}`} onClick={mintNFT} disabled={loading}>
                     {loading ? "Minting..." : "Mint NFT"}
                 </button>
                 <h4 style={{ textColor: "red" }}>{error}</h4>

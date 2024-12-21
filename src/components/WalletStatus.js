@@ -6,7 +6,6 @@ const WalletStatus = () => {
 
   return (
     <div>
-      {loading && <p>Loading...</p>}
       {walletAddress ? (
         <div>
            <div className="wallet-info">

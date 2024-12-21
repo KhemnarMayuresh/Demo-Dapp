@@ -36,7 +36,8 @@ const ERC20Balance = () => {
 
             // Format the balance (assuming 18 decimals, typical for ERC-20 tokens)
             const formattedBalance = ethers.formatUnits(balanceInWei, 18); // Format balance in human-readable units
-            return { name: tokenName, symbol: tokenSymbol, balance: formattedBalance };
+            const bal = parseFloat(formattedBalance.toString());
+            return { name: tokenName, symbol: tokenSymbol, balance: bal };
         } catch (error) {
             console.error("Error fetching token data:", error);
         }
@@ -67,19 +68,19 @@ const ERC20Balance = () => {
     };
 
     return (
-        <div>
+        <div className="token-container">
             {walletAddress ?
                 <>
                     <h3>Show Balance of ERC20 Tokens</h3>
                     <button className="refresh-button" onClick={getTokenInfo}>
-                    <span class="refresh-icon" id="refreshIcon">&#8635;</span> Refresh Balance
+                        <span className="refresh-icon" id="refreshIcon">&#8635;</span> Refresh Balance
                     </button>
-                    <div className="balance-info">
+                    <div className={`balance-info ${loading ? 'loading' : ''}`}>
                         <div className="erc20-balance">
-                            <strong>{`Balance of ${firstTokenData?.name || ""} (${firstTokenData?.symbol || ""}) `}:</strong> {firstTokenData?.balance || "0"}
+                            <strong>{`Balance of ${firstTokenData?.name || ""}`}:</strong> {firstTokenData?.balance || "0"} {firstTokenData?.symbol || ""}
                         </div>
                         <div className="erc20-balance">
-                            <strong>{`Balance of ${secondTokenData?.name || ""} (${secondTokenData?.symbol || ""}) `}:</strong> {secondTokenData?.balance || "0"}
+                            <strong>{`Balance of ${secondTokenData?.name || ""}`}:</strong> {secondTokenData?.balance || "0"} {secondTokenData?.symbol || ""}
                         </div>
                     </div>
                 </> :
