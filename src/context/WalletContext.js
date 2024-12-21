@@ -27,6 +27,10 @@ export const WalletProvider = ({ children }) => {
        }
        // get account 
       const accounts = await provider.send("eth_requestAccounts", []);
+      if (accounts.length === 0) {
+        alert("No accounts found. Please make sure your MetaMask wallet is unlocked and try again.");
+        return;
+    }
       const address = accounts[0];
       setWalletAddress(address);
 
@@ -37,6 +41,18 @@ export const WalletProvider = ({ children }) => {
       setBalance(bal?.toFixed(4));
     } catch (error) {
       console.error("Error connecting to wallet:", error);
+      // Handle different types of errors and provide specific messages
+      if (error.code === 4001) {
+          alert("User rejected the request to connect to MetaMask.");
+      } else if (error.code === -32002) {
+          alert("MetaMask is already open and requesting a connection. Please approve the connection.");
+      } else if (error.message.includes("network")) {
+          alert("Failed to connect to the Sepolia network. Please check your network settings.");
+      } else if (error.message.includes("denied")) {
+          alert("Connection to MetaMask was denied. Please try again.");
+      } else {
+          alert("An error occurred while connecting to MetaMask. Please try again later.");
+      }
     } finally {
       setLoading(false);
     }
